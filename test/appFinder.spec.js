@@ -49,3 +49,13 @@ describe('Re-fetches apps', function (assert) {
     assert.deepEqual(resultTitles, ['Docker Quickstart Terminal'])
   })
 })
+
+describe('Works with space in query', function (assert) {
+  assert.plan(1)
+  const cwd = updateCache(collection)
+
+  appFinder({cwd}).search('quickstart ter').then((results) => {
+    const resultTitles = results.map((result) => result.title)
+    assert.deepEqual(resultTitles, ['Docker Quickstart Terminal'])
+  })
+})
