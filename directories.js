@@ -48,7 +48,9 @@ platform.linux = {
   filePath: [
     path.join(os.homedir()),
   ],
-  appPath: [],
+  appPath: [
+    path.join('/', 'usr', 'bin'),
+  ],
   excludePath: [],
   excludeName: [
     'node_modules',
